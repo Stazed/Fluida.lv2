@@ -239,12 +239,15 @@ void XSynth::setup_envelope() {
     fluid_synth_add_default_mod(synth, fmod, FLUID_SYNTH_ADD);
 #endif
 
-    fluid_synth_cc(synth, 0, 73, 0);
-    fluid_synth_cc(synth, 0, 75, 0);
-    fluid_synth_cc(synth, 0, 77, 0);
-    fluid_synth_cc(synth, 0, 72, 0);
-    fluid_synth_cc(synth, 0, 71, 0);
-    fluid_synth_cc(synth, 0, 74, 0);
+    for (unsigned ii = 0; ii < 16; ++ii)
+    {
+        fluid_synth_cc(synth, ii, 73, 0);
+        fluid_synth_cc(synth, ii, 75, 0);
+        fluid_synth_cc(synth, ii, 77, 0);
+        fluid_synth_cc(synth, ii, 72, 0);
+        fluid_synth_cc(synth, ii, 71, 0);
+        fluid_synth_cc(synth, ii, 74, 0);
+    }
 }
 
 void XSynth::init_synth() {
